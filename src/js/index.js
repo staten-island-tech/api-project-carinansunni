@@ -5,7 +5,9 @@ const key = "YOURKEYHERE";
 const query = async function () {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=4000&vote_average.gte=8&with_watch_monetization_types=flatrate`
+      `https://collectionapi.metmuseum.org/public/collection/v1/objects` //object id only, need to convert object id into another api (?) so that it'll actually spit out smth
+
+      'https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]'  //other code needed to plug the object id into
     );
     const data = await response.json();
     data.results.forEach((movie) => {
@@ -25,21 +27,22 @@ const query = async function () {
         `<div class="movie-card">
             <div class="movie-card-front">
               <img
-                src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"
+                src="https://image.tmdb.org/t/p/w300/${object.primaryImage}"
                 alt=""
                 class="poster"
               />
             </div>
             <div class="movie-card-back">
-              <h3 class="movie-card-header">${movie.original_title}</h3>
+              <h3 class="movie-card-header">${object.objectName}</h3>
               <div class="score-box">
                 <p class="user-score">Community Score</p>
-                <p class="user-score">${movie.vote_average}</p>
-              </div>
+                <p class="user-score">${object.vote_average}</p>
+              </div> 
+              //DONT NEED VOTE AVERAGE CARINAA!! IDK HOW TO TRANSLATE VOTE AVG INTO MUSEUM ARTIFACTS !!!!!!!!!
     
               <div class="release-box">
                 <p class="release-date">Released</p>
-                <p class="release-date">${movie.release_date}</p>
+                <p class="release-date">${object.accessionYear}</p>
               </div>
     
               <div class="movie-genres">
