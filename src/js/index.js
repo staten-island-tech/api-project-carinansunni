@@ -1,25 +1,24 @@
 import { DOMSelectors } from "./DOM";
 import { departments } from "./artDepartment";
 
-const key = "YOURKEYHERE";
-const query = async function () {
-  try {
-    const response = await fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/objects` //object id only, need to convert object id into another api (?) so that it'll actually spit out smth
-
-      'https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]'  //other code needed to plug the object id into
-    );
-    const data = await response.json();
-    data.results.forEach((art) => {
-      let artDepartmentArr = [];
-      const addDepartment = function () {
-        departments.forEach((element) => {
-          if (movie.genre_ids.includes(element.id)) {
-            artDepartmentArr.push(element.name);
-            return artDepartmentArr;
-          }
-        });
-      };
+const objectIDs = [1,2,3,4,5,6,7,8,9,10,];
+const query = async function (objectIDs) {
+  objectIDs.forEach(async function (id) {
+    try {
+      const response = await fetch(
+      `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+      );
+      const data = await response.json();
+      data.results.forEach((art) => {
+        let artDepartmentArr = [];
+        const addDepartment = function () {
+          departments.forEach((element) => {
+            if (movie.genre_ids.includes(element.id)) {
+              artDepartmentArr.push(element.name);
+              return artDepartmentArr;
+            }
+          });
+        };
       addDepartment();
       console.log(genreArr);
       DOMSelectors.grid.insertAdjacentHTML(
@@ -51,9 +50,11 @@ const query = async function () {
           </div>`
       );
     });
-  } catch (error) {
+   } 
+   catch (error) {
     console.log(error);
     alert("Something went wrong.");
-  }
 };
-query();
+
+
+//query ()
