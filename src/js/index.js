@@ -1,12 +1,12 @@
 import { DOMSelectors } from "./DOM";
 import { departments } from "./artDepartment";
 
-const objectIDs = [1,2,3,4,5,6,7,8,9,10,];
+const objectIDs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const query = async function (objectIDs) {
   objectIDs.forEach(async function (id) {
     try {
       const response = await fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
       );
       const data = await response.json();
       data.results.forEach((art) => {
@@ -19,11 +19,11 @@ const query = async function (objectIDs) {
             }
           });
         };
-      addDepartment();
-      console.log(genreArr);
-      DOMSelectors.grid.insertAdjacentHTML(
-        "beforeend",
-        `<div class="art-card">
+        addDepartment();
+        console.log(genreArr);
+        DOMSelectors.grid.insertAdjacentHTML(
+          "beforeend",
+          `<div class="art-card">
             <div class="art-card-front">
               <img
                 src="https://images.metmuseum.org/CRDImages/as/w300/${art.primaryImage}.jpg"
@@ -48,13 +48,13 @@ const query = async function (objectIDs) {
               </div>
             </div>
           </div>`
-      );
-    });
-   } 
-   catch (error) {
-    console.log(error);
-    alert("Something went wrong.");
+        );
+      });
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong.");
+    }
+  });
 };
 
-
-//query ()
+//query ()//
