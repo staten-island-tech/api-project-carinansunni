@@ -5,7 +5,9 @@ const key = "YOURKEYHERE";
 const query = async function () {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=4000&vote_average.gte=8&with_watch_monetization_types=flatrate`
+      `https://collectionapi.metmuseum.org/public/collection/v1/objects` //object id only, need to convert object id into another api (?) so that it'll actually spit out smth
+
+      'https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]'  //other code needed to plug the object id into
     );
     const data = await response.json();
     data.results.forEach((art) => {
