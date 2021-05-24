@@ -1,5 +1,5 @@
 import { DOMSelectors } from "./DOM";
-import { genres } from "./genre";
+import { departments } from "./artDepartment";
 
 const key = "YOURKEYHERE";
 const query = async function () {
@@ -8,42 +8,42 @@ const query = async function () {
       `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=4000&vote_average.gte=8&with_watch_monetization_types=flatrate`
     );
     const data = await response.json();
-    data.results.forEach((movie) => {
-      let genreArr = [];
-      const addGenre = function () {
-        genres.forEach((element) => {
+    data.results.forEach((art) => {
+      let artDepartmentArr = [];
+      const addDepartment = function () {
+        departments.forEach((element) => {
           if (movie.genre_ids.includes(element.id)) {
-            genreArr.push(element.name);
-            return genreArr;
+            artDepartmentArr.push(element.name);
+            return artDepartmentArr;
           }
         });
       };
-      addGenre();
+      addDepartment();
       console.log(genreArr);
       DOMSelectors.grid.insertAdjacentHTML(
         "beforeend",
-        `<div class="movie-card">
-            <div class="movie-card-front">
+        `<div class="art-card">
+            <div class="art-card-front">
               <img
-                src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"
+                src="https://images.metmuseum.org/CRDImages/as/w300/${art.primaryImage}.jpg"
                 alt=""
                 class="poster"
               />
             </div>
-            <div class="movie-card-back">
-              <h3 class="movie-card-header">${movie.original_title}</h3>
+            <div class="art-card-back">
+              <h3 class="art-card-header">${art.title}</h3> 
               <div class="score-box">
-                <p class="user-score">Community Score</p>
-                <p class="user-score">${movie.vote_average}</p>
+                <p class="circa-date">Date Created</p>
+                <p class="circa-date">${art.objectDate}</p>
               </div>
     
-              <div class="release-box">
-                <p class="release-date">Released</p>
-                <p class="release-date">${movie.release_date}</p>
+              <div class="creator-box">
+                <p class="creator-name">Artist/Creator</p>
+                <p class="creator-name">${art.name}</p>
               </div>
     
-              <div class="movie-genres">
-                 ${genreArr}
+              <div class="art-departments">
+                 ${artDepartmentArr}
               </div>
             </div>
           </div>`

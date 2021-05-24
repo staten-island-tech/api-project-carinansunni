@@ -1,5 +1,5 @@
 import { DOMSelectors } from "./DOM";
-import { genres } from "./genre";
+import { genres } from "./artDepartment";
 const key = "73e396357001f6d2f7ae92f73e5a8c1e";
 const listen = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
