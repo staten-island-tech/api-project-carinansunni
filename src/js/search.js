@@ -1,6 +1,5 @@
 import { DOMSelectors } from "./DOM";
 import { genres } from "./artDepartment";
-const key = "73e396357001f6d2f7ae92f73e5a8c1e";
 const listen = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -16,9 +15,9 @@ const listen = function () {
           let genreArr = [];
           const addGenre = function () {
             genres.forEach((element) => {
-              if (movie.genre_ids.includes(element.id)) {
-                genreArr.push(element.name);
-                return genreArr;
+              if (art.artDepartment_ids.includes(element.id)) {
+                artDepartmentArr.push(element.name);
+                return artDepartmentArr;
               }
             });
           };
@@ -36,7 +35,7 @@ const listen = function () {
               </div>
               <div class="art-card-back">
                 <h3 class="art-card-header">${art.title}</h3> 
-                <div class="score-box">
+                <div class="date-box">
                   <p class="circa-date">Date Created</p>
                   <p class="circa-date">${art.objectDate}</p>
                 </div>
