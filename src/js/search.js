@@ -11,8 +11,8 @@ const listen = function () {
           `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchParams}&page=1&include_adult=false`
         );
         const data = await response.json();
-        data.results.forEach((movie) => {
-          let genreArr = [];
+        data.results.forEach((art) => {
+          let artDepartmentArr = [];
           const addGenre = function () {
             genres.forEach((element) => {
               if (art.artDepartment_ids.includes(element.id)) {
