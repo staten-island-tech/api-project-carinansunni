@@ -1,5 +1,6 @@
 import { DOMSelectors } from "./DOM";
 import { genres } from "./artDepartment";
+
 const listen = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
