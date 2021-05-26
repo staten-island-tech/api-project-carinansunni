@@ -26,36 +26,36 @@ const listen = function () {
 
           DOMSelectors.grid.insertAdjacentHTML(
             "beforeend",
-            `<div class="movie-card">
-            <div class="movie-card-front">
-              <img
-                src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"
-                alt=""
-                class="poster"
-              />
-            </div>
-            <div class="movie-card-back">
-              <h3 class="movie-card-header">${movie.original_title}</h3>
-              <div class="score-box">
-                <p class="user-score">Community Score</p>
-                <p class="user-score">${movie.vote_average}</p>
+            `<div class="art-card">
+              <div class="art-card-front">
+                <img
+                  src="https://images.metmuseum.org/CRDImages/as/w300/${art.primaryImage}.jpg"
+                  alt=""
+                  class="poster"
+                />
               </div>
+              <div class="art-card-back">
+                <h3 class="art-card-header">${art.title}</h3> 
+                <div class="score-box">
+                  <p class="circa-date">Date Created</p>
+                  <p class="circa-date">${art.objectDate}</p>
+                </div>
       
-              <div class="release-box">
-                <p class="release-date">Released</p>
-                <p class="release-date">${movie.release_date}</p>
-              </div>
+                <div class="creator-box">
+                  <p class="creator-name">Artist/Creator</p>
+                  <p class="creator-name">${art.name}</p>
+                </div>
       
-              <div class="movie-genres">
-                ${genreArr}
+                <div class="art-departments">
+                   ${artDepartmentArr}
+                </div>
               </div>
-            </div>
-          </div>`
+            </div>`
           );
         });
       } catch (error) {
         console.log(error);
-        alert("Hey something went wrong");
+        alert("Something went wrong.");
       }
     };
     searchQuery();

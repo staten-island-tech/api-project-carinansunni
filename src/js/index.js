@@ -13,14 +13,14 @@ const query = async function (objectIDs) {
         let artDepartmentArr = [];
         const addDepartment = function () {
           departments.forEach((element) => {
-            if (movie.genre_ids.includes(element.id)) {
+            if (art.artDepartment_ids.includes(element.id)) {
               artDepartmentArr.push(element.name);
               return artDepartmentArr;
             }
           });
         };
         addDepartment();
-        console.log(genreArr);
+        console.log(artDepartmentArr);
         DOMSelectors.grid.insertAdjacentHTML(
           "beforeend",
           `<div class="art-card">
