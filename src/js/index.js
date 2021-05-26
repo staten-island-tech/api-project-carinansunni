@@ -33,7 +33,7 @@ const query = async function (objectIDs) {
             </div>
             <div class="art-card-back">
               <h3 class="art-card-header">${art.title}</h3> 
-              <div class="score-box">
+              <div class="date-box">
                 <p class="circa-date">Date Created</p>
                 <p class="circa-date">${art.objectDate}</p>
               </div>
