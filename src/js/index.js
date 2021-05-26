@@ -1,7 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { departments } from "./artDepartment";
 
-const objectIDs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const objectIDs = [19868, 2, 8903, 33333, 777, 100, 48, 1516, 2342, 1001];
 const query = async function (objectIDs) {
   objectIDs.forEach(async function (id) {
     try {
@@ -26,7 +26,7 @@ const query = async function (objectIDs) {
           `<div class="art-card">
             <div class="art-card-front">
               <img
-                src="https://images.metmuseum.org/CRDImages/as/w300/${art.primaryImage}.jpg"
+                src="https://images.metmuseum.org/CRDImages/ad/original/DP350917.jpg"
                 alt=""
                 class="poster"
               />
@@ -58,3 +58,12 @@ const query = async function (objectIDs) {
 };
 
 //query ()//
+//.......mah name is jpg
+////WE"RE DOING THIS< AND I QUOTWE
+//
+// Array of random ids on page load. To get the objects
+// Run a for each for each id and pass them into an asynchronous function n ull get a bunch of cards
+// Instead of one query and getting an array of movies, it’s a bunch of queries that each return one object.
+// So
+// Take ids. Filter into asynchronous function. Spit onto page one by one.
+// Then do search function with key words
