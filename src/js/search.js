@@ -9,20 +9,20 @@ const listen = function () {
     const searchQuery = async function () {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchParams}&page=1&include_adult=false`
+          `https://collectionapi.metmuseum.org/public/collection/v1/search?isOnView=true&q=${searchParams}`
         );
         const data = await response.json();
         data.results.forEach((art) => {
           let artDepartmentArr = [];
-          const addGenre = function () {
-            genres.forEach((element) => {
+          const addArtDepartment = function () {
+            departments.forEach((element) => {
               if (art.artDepartment_ids.includes(element.id)) {
                 artDepartmentArr.push(element.name);
                 return artDepartmentArr;
               }
             });
           };
-          addGenre();
+          addArtDepartment();
 
           DOMSelectors.grid.insertAdjacentHTML(
             "beforeend",
