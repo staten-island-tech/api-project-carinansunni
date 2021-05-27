@@ -19,7 +19,7 @@ const query = async function (objectIDs) {
             }
           });
         };
-        addDepartment();
+        addArtDepartment();
         console.log(artDepartmentArr);
         DOMSelectors.grid.insertAdjacentHTML(
           "beforeend",
