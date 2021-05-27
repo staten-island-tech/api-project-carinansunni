@@ -26,8 +26,8 @@ const query = async function (objectIDs) {
           `<div class="art-card">
             <div class="art-card-front">
               <img
-                src="https://images.metmuseum.org/CRDImages/ad/original/DP350917.jpg"
-                alt=""
+                src="${art.primaryImage}" 
+                alt="${medium}"
                 class="poster"
               />
             </div>

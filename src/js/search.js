@@ -29,8 +29,8 @@ const listen = function () {
             `<div class="art-card">
               <div class="art-card-front">
                 <img
-                  src="https://images.metmuseum.org/CRDImages/as/w300/${art.primaryImage}.jpg"
-                  alt=""
+                  src="${art.primaryImage}"
+                  alt="${medium}"
                   class="poster"
                 />
               </div>
