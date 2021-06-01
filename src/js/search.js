@@ -12,7 +12,7 @@ const listen = function () {
           `https://collectionapi.metmuseum.org/public/collection/v1/search?isOnView=true&q=${searchParams}`
         );
         const data = await response.json();
-        data.results.forEach((art) => {
+        data.objectIDs.forEach((id) => {
           let artDepartmentArr = [];
           const addArtDepartment = function () {
             departments.forEach((element) => {

@@ -9,16 +9,16 @@ const query = async function (objectIDs) {
         `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
       );
       const data = await response.json();
-      data.results.forEach((art) => {
-        let artDepartmentArr = [];
-        const addDepartment = function () {
-          departments.forEach((element) => {
-            if (art.artDepartment_ids.includes(element.id)) {
-              artDepartmentArr.push(element.name);
-              return artDepartmentArr;
-            }
-          });
-        };
+      data.objectIDs.forEach((id) => {
+        // let artDepartmentArr = [];
+        // const addDepartment = function () {
+        //   departments.forEach((element) => {
+        //     if (art.artDepartment_ids.includes(element.id)) {
+        //       artDepartmentArr.push(element.name);
+        //       return artDepartmentArr;
+        //     }
+        //   });
+        // };
         addArtDepartment();
         console.log(artDepartmentArr);
         DOMSelectors.grid.insertAdjacentHTML(
@@ -57,7 +57,7 @@ const query = async function (objectIDs) {
   });
 };
 
-//query ()//
+query();
 //.......mah name is jpg
 ////WE"RE DOING THIS< AND I QUOTWE
 //
