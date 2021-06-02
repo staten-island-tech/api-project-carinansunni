@@ -9,38 +9,39 @@ const query = async function (objectIDs) {
         `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
       );
       const data = await response.json();
-      data.objectIDs.forEach((art) => {
+      console.log(data);
+      /* data.objectID.forEach((art) => {
         addArtDepartment();
-        console.log(artDepartmentArr);
-        DOMSelectors.grid.insertAdjacentHTML(
-          "beforeend",
-          `<div class="art-card">
+        console.log(artDepartmentArr); */
+      DOMSelectors.grid.insertAdjacentHTML(
+        "beforeend",
+        `<div class="art-card">
             <div class="art-card-front">
               <img
-                src="${art.primaryImage}" 
-                alt="${medium}"
+                src="${data.primaryImage}" 
+                alt=""
                 class="poster"
               />
             </div>
             <div class="art-card-back">
-              <h3 class="art-card-header">${art.title}</h3> 
+              <h3 class="art-card-header">${data.title}</h3> 
               <div class="date-box">
                 <p class="circa-date">Date Created</p>
-                <p class="circa-date">${art.objectDate}</p>
+                <p class="circa-date">${data.objectDate}</p>
               </div>
     
               <div class="creator-box">
                 <p class="creator-name">Artist/Creator</p>
-                <p class="creator-name">${art.name}</p>
+                <p class="creator-name">${data.name}</p>
               </div>
     
               <div class="art-departments">
-                 ${artDepartmentArr}
+                 ${data.department}
               </div>
             </div>
           </div>`
-        );
-      });
+      );
+      // });
     } catch (error) {
       console.log(error);
       alert("Something went wrong.");
@@ -48,7 +49,7 @@ const query = async function (objectIDs) {
   });
 };
 
-query();
+query(objectIDs);
 //.......mah name is jpg
 ////WE"RE DOING THIS< AND I QUOTWE
 //

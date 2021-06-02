@@ -12,8 +12,10 @@ const listen = function () {
           `https://collectionapi.metmuseum.org/public/collection/v1/search?isOnView=true&q=${searchParams}`
         );
         const data = await response.json();
+
         data.objectIDs.forEach((art) => {
-          let artDepartmentArr = [];
+          console.log(art);
+          /*  let artDepartmentArr = [];
           const addArtDepartment = function () {
             departments.forEach((element) => {
               if (art.artDepartment_ids.includes(element.id)) {
@@ -22,7 +24,7 @@ const listen = function () {
               }
             });
           };
-          addArtDepartment();
+          addArtDepartment(); */
 
           DOMSelectors.grid.insertAdjacentHTML(
             "beforeend",
@@ -30,7 +32,7 @@ const listen = function () {
               <div class="art-card-front">
                 <img
                   src="${art.primaryImage}" 
-                  alt="${medium}"
+                  alt=""
                   class="poster"
                 />
               </div>
@@ -47,7 +49,7 @@ const listen = function () {
                 </div>
       
                 <div class="art-departments">
-                   ${artDepartmentArr}
+                  
                 </div>
               </div>
             </div>`
