@@ -9,16 +9,7 @@ const query = async function (objectIDs) {
         `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
       );
       const data = await response.json();
-      data.objectIDs.forEach((id) => {
-        // let artDepartmentArr = [];
-        // const addDepartment = function () {
-        //   departments.forEach((element) => {
-        //     if (art.artDepartment_ids.includes(element.id)) {
-        //       artDepartmentArr.push(element.name);
-        //       return artDepartmentArr;
-        //     }
-        //   });
-        // };
+      data.objectIDs.forEach((art) => {
         addArtDepartment();
         console.log(artDepartmentArr);
         DOMSelectors.grid.insertAdjacentHTML(
@@ -26,21 +17,21 @@ const query = async function (objectIDs) {
           `<div class="art-card">
             <div class="art-card-front">
               <img
-                src="${objectID.primaryImage}" 
+                src="${art.primaryImage}" 
                 alt="${medium}"
                 class="poster"
               />
             </div>
             <div class="art-card-back">
-              <h3 class="art-card-header">${objectID.title}</h3> 
+              <h3 class="art-card-header">${art.title}</h3> 
               <div class="date-box">
                 <p class="circa-date">Date Created</p>
-                <p class="circa-date">${objectID.objectDate}</p>
+                <p class="circa-date">${art.objectDate}</p>
               </div>
     
               <div class="creator-box">
                 <p class="creator-name">Artist/Creator</p>
-                <p class="creator-name">${objectID.name}</p>
+                <p class="creator-name">${art.name}</p>
               </div>
     
               <div class="art-departments">
