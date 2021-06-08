@@ -1,7 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { departments } from "./artDepartment";
 
-const objectIDs = [19868, 2, 8903, 33333, 777, 100, 48, 1516, 2342, 1001];
+const objectIDs = [208073, 194117, 8903, 335861, 825963, 437984, 3969, 1516, 2342, 1001, 45734];
 const query = async function (objectIDs) {
   objectIDs.forEach(async function (id) {
     try {
@@ -32,7 +32,7 @@ const query = async function (objectIDs) {
     
               <div class="creator-box">
                 <p class="creator-name">Artist/Creator</p>
-                <p class="creator-name">${data.name}</p>
+                <p class="creator-name">${data.artistDisplayName}</p>
               </div>
     
               <div class="art-departments">
