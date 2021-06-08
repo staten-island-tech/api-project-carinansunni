@@ -1,7 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { departments } from "./artDepartment";
 
-const objectIDs = [208073, 194117, 461332, 335861, 458971, 437984, 437766, 76985, 2342, 443449, 45734];
+const objectIDs = [208073, 194117, 461332, 335861, 458971, 437984, 437766, 76985, 2342, 443449, 45734, 436553];
 const query = async function (objectIDs) {
   objectIDs.forEach(async function (id) {
     try {
