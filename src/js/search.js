@@ -57,7 +57,7 @@ const listen = function () {
         });
       } catch (error) {
         console.log(error);
-        alert("Something went wrong.");
+        alert("Not found. Search something else.");
       }
     };
     searchQuery();
@@ -65,5 +65,3 @@ const listen = function () {
 };
 
 listen();
-//listennnnn//////////
-////////////////fearmakescompanionsofusallllllllllllllll//dooweeedooooooowhatdoidoooooooolalalalduahudhuhdadadadaddadaaaadduhduhdudhudhhadooweeeeyooooooowawaaaaawawawaaaaa
