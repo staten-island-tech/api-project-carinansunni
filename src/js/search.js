@@ -31,21 +31,21 @@ const listen = function () {
             `<div class="art-card">
               <div class="art-card-front">
                 <img
-                  src="${art.primaryImage}" 
-                  alt="${art.medium}"
+                  src="${data.primaryImage}" 
+                  alt="${data.medium}"
                   class="poster"
                 />
               </div>
               <div class="art-card-back">
-                <h3 class="art-card-header">${art.title}</h3> 
+                <h3 class="art-card-header">${data.title}</h3> 
                 <div class="date-box">
                   <p class="circa-date">Date Created</p>
-                  <p class="circa-date">${art.objectDate}</p>
+                  <p class="circa-date">${data.objectDate}</p>
                 </div>
       
                 <div class="creator-box">
                   <p class="creator-name">Artist/Creator</p>
-                  <p class="creator-name">${art.artistDisplayName}</p>
+                  <p class="creator-name">${data.artistDisplayName}</p>
                 </div>
       
                 <div class="art-departments">
