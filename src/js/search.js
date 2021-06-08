@@ -13,8 +13,7 @@ const listen = function () {
         );
         const data = await response.json();
 
-        data.objectIDs.forEach((art) => {
-          console.log(art);
+        data.objectIDs.forEach((data) => {
           /*  let artDepartmentArr = [];
           const addArtDepartment = function () {
             departments.forEach((element) => {
@@ -49,7 +48,7 @@ const listen = function () {
                 </div>
       
                 <div class="art-departments">
-                  
+                  ${data.department}
                 </div>
               </div>
             </div>`
