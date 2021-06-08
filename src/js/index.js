@@ -19,7 +19,7 @@ const query = async function (objectIDs) {
             <div class="art-card-front">
               <img
                 src="${data.primaryImage}" 
-                alt=""
+                alt="${data.medium}"
                 class="poster"
               />
             </div>
