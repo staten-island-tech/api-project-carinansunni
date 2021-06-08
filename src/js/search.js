@@ -1,6 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { departments } from "./artDepartment";
 
+console.log("hur");
 const listen = function () {
   DOMSelectors.searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -12,7 +13,7 @@ const listen = function () {
           `https://collectionapi.metmuseum.org/public/collection/v1/search?isOnView=true&q=${searchParams}`
         );
         const data = await response.json();
-
+        console.log(data);
         data.objectIDs.forEach((data) => {
           /*  let artDepartmentArr = [];
           const addArtDepartment = function () {
